@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Flower Classifier</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div>
+                <h1>🌸 AI Flower Classifier</h1>
+                <p>Machine Learning Dashboard</p>
+            </div>
+
+            <span class="status">● AI Model Active</span>
+        </header>
+
+        <section class="stats">
+
+            <div class="card">
+                <p>Model Accuracy</p>
+                <h2 id="accuracy">Loading...</h2>
+            </div>
+
+            <div class="card">
+                <p>Flower Classes</p>
+                <h2>3</h2>
+            </div>
+
+            <div class="card">
+                <p>Training Samples</p>
+                <h2>120</h2>
+            </div>
+
+            <div class="card">
+                <p>Test Samples</p>
+                <h2>30</h2>
+            </div>
+
+        </section>
+
+        <section class="charts">
+
+            <div class="card chart-card">
+                <h3>Flower Distribution</h3>
+                <canvas id="flowerChart"></canvas>
+            </div>
+
+            <div class="card chart-card">
+                <h3>Confusion Matrix</h3>
+                <div id="matrix"></div>
+            </div>
+
+        </section>
+
+        <section class="card prediction">
+
+            <h2>🔍 Test Your Flower</h2>
+
+            <p>
+                Enter flower measurements and let AI
+                predict its category.
+            </p>
+
+            <form id="predictionForm">
+
+                <div class="inputs">
+
+                    <label>
+                        Sepal Length
+                        <input type="number" step="any"
+                            name="sepal_length" value="5.1" required>
+                    </label>
+
+                    <label>
+                        Sepal Width
+                        <input type="number" step="any"
+                            name="sepal_width" value="3.5" required>
+                    </label>
+
+                    <label>
+                        Petal Length
+                        <input type="number" step="any"
+                            name="petal_length" value="1.4" required>
+                    </label>
+
+                    <label>
+                        Petal Width
+                        <input type="number" step="any"
+                            name="petal_width" value="0.2" required>
+                    </label>
+
+                </div>
+
+                <button type="submit">Predict Flower</button>
+
+            </form>
+
+            <div id="result" class="result"></div>
+
+        </section>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
